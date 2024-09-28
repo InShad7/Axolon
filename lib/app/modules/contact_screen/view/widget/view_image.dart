@@ -19,7 +19,7 @@ Future<dynamic> viewImageWidget({context, image}) {
                 image,
               ),
             ),
-            fit: BoxFit.cover,
+            fit: BoxFit.contain,
           ),
         ),
       );

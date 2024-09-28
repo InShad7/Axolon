@@ -41,11 +41,11 @@ class AddContactController extends GetxController {
 
   @override
   void onClose() {
-    // nameController.dispose();
-    // emailController.dispose();
-    // numberController.dispose();
-    // groupController.dispose();
-    // pickedImg = '';
+    nameController.dispose();
+    emailController.dispose();
+    numberController.dispose();
+    groupController.dispose();
+    pickedImg = '';
     super.onClose();
   }
 
@@ -137,6 +137,9 @@ class AddContactController extends GetxController {
 
       homeController.update();
       ContactScreenController contactScreenController =
+          Get.find<ContactScreenController>();
+      contactScreenController.update();
+      contactScreenController contactScreenController =
           Get.find<ContactScreenController>();
       contactScreenController.update();
       Get.back();
