@@ -8,6 +8,7 @@ import 'package:flutter/widgets.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
+import '../../search_screen/controller/search_controller.dart';
 
 class AddContactController extends GetxController {
   HomeController homeController = Get.find<HomeController>();
@@ -136,12 +137,8 @@ class AddContactController extends GetxController {
       contact.image = pickedImg;
 
       homeController.update();
-      ContactScreenController contactScreenController =
-          Get.find<ContactScreenController>();
-      contactScreenController.update();
-      contactScreenController contactScreenController =
-          Get.find<ContactScreenController>();
-      contactScreenController.update();
+      Get.find<ContactScreenController>().update();
+      Get.find<ContactSearchController>().update();
       Get.back();
       Fluttertoast.showToast(msg: 'Updated');
     } catch (e) {
